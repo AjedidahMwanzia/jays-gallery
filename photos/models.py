@@ -6,3 +6,11 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+class Photo(models.Model):
+    description=models.CharField(max_length = 500, null=False,blank=False)
+    image = models.ImageField(null=False, blank=False)
+    Category=models.ForeignKey(Category, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.description
