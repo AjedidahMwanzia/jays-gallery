@@ -12,7 +12,7 @@ This is a Django application for personal gallery that allows a user to upload i
 ## Screenshots 
 ###### Home page
  
-<img src="">
+<img src="https://github.com/AjedidahMwanzia/jays-gallery/blob/master/static/images/home.png">
  
   
 * View different photos that interest them  
