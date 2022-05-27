@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
 from .models import Category,Photo
+
 # Create your views here.
 def gallery(request):
     categories = Category.objects.all()
