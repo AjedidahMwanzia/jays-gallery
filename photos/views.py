@@ -22,14 +22,12 @@ def viewPhoto(request,pk):
     return render(request,'photos/photo.html',{'photo':photo})
 
 def search_results(request):
-
-    if 'Category' in request.GET and request.GET["Category"]:
-        search_term = request.GET.get("Category")
-        searched_categories = Category.search_by_name(search_term)
-        message = f"{search_term}"
-
-        return render(request, 'photos/search.html',{"message":message,"categories": searched_categories})
-
+    if 'imagesearch' in request.GET and request.GET["imagesearch"]:
+        category = request.GET.get("imagesearch")
+        searched_images = Image.search_by_category(category)
+        message = f"{category}"
+        print(searched_images)
+        return render(request, 'photos/search.html', {"message": message, "images": searched_images})
     else:
-        message = "You haven't searched for any term"
-        return render(request, 'photos/search.html',{"message":message})
+        message = "You haven't searched for any image category"
+        return render(request, 'photos/search.html', {"message": message})
