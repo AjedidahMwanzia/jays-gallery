@@ -1,5 +1,7 @@
-
+{%extends 'photos/base.html'%}
 {% load bootstrap3 %}
+{% load static %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +14,8 @@
   <body>
     <title>Jays Gallery</title>
 </head>
-<body class="m-5">
+{%block content %}
+<div class="m-5">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -31,7 +34,7 @@
                         </li>
                       {% endfor %}
                       
-                     <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-small; ">Add photo</a>
+                     
                     </ul>
                   </div>  
             </div>
@@ -61,5 +64,6 @@
         </div>
 
     </div>
-</body>
-</html>
+  </div>
+  {%endblock%}
+
