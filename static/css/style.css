@@ -6,3 +6,6 @@ body{
     font-family: 'Poppins', sans-serif;
     font-size: 1.1vw;
 }
+#home{
+    list-style: none;
+}

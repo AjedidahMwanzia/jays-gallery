@@ -7,6 +7,12 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
+
 class Photo(models.Model):
     category=models.ForeignKey(Category, on_delete=models.SET_NULL,null=True,blank=True)
     description=models.TextField(null=True)
@@ -15,3 +21,9 @@ class Photo(models.Model):
     
     def __str__(self):
         return self.description
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
