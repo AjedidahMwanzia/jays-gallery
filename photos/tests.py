@@ -1,14 +1,11 @@
 from django.test import TestCase
 
-# Create your tests here.
-from django.test import TestCase
-
 from .models import Photo, Category, Location
 
 
 class TestPhoto(TestCase):
     def setUp(self):
-        self.location = Location(name='Moringa')
+        self.location = Location(name='Bali')
         self.location.save_location()
 
         self.category = Category(name='home')
@@ -18,7 +15,7 @@ class TestPhoto(TestCase):
                                 category=self.category)
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.image_test, Image))
+        self.assertTrue(isinstance(self.image_test, Photo))
 
     def test_save_image(self):
         self.image_test.save_image()
@@ -32,7 +29,7 @@ class TestPhoto(TestCase):
 
     def test_update_image(self):
         self.image_test.save_image()
-        self.image_test.update_image(self.image_test.id,self.image.location,category, 'photos/test.jpg')
+        self.image_test.update_image(self.image_test.id,self.location_test.id,self.category_test.id,'photos/test.jpg')
         changed_img = Photo.objects.filter(image='photos/test.jpg')
         self.assertTrue(len(changed_img) > 0)
 
@@ -43,7 +40,7 @@ class TestPhoto(TestCase):
 
     def test_search_image_by_location(self):
         self.image_test.save_image()
-        found_images = self.image_test.filter_by_location(location='moringa')
+        found_images = self.image_test.filter_by_location(location='bali')
         self.assertTrue(len(found_images) == 1)
 
     def test_search_image_by_category(self):
@@ -76,9 +73,9 @@ class TestLocation(TestCase):
         self.assertTrue(len(locations) > 1)
 
     def test_update_location(self):
-        new_location = 'kericho'
+        new_location = 'dubai'
         self.location.update_location(self.location.id, new_location)
-        changed_location = Location.objects.filter(name='kericho')
+        changed_location = Location.objects.filter(name='dubai')
         self.assertTrue(len(changed_location) > 0)
 
     def test_delete_location(self):
