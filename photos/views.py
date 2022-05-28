@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http  import HttpResponse
+from django.http  import HttpResponse,Http404
 from .models import Category,Photo,Location
 
 # Create your views here.
@@ -22,18 +22,17 @@ def viewPhoto(request,pk):
     return render(request,'photos/photo.html',{'photo':photo})
 
 def search_results(request):
-
-    if 'name' in request.GET and request.GET["name"]:
-        search_term = request.GET.get("name")
-        searched_photos = Photo.search_photo(search_term)
-        print(searched_photos)
+    if 'photo' in request.GET and request.GET["photo"]:
+        search_term = request.GET.get("photo")
+        searched_photos = Picture.search_by_category(search_term)
         message = f"{search_term}"
 
-        return render(request, 'photos/search.html',{"message":message,"images": searched_photos})
+        return render(request, 'photos/search.html',{"message":message,"photos": searched_photos})
 
     else:
         message = "You haven't searched for any term"
         return render(request, 'photos/search.html',{"message":message})
+
 
 def get_location(request,location_id):
     photos=Photo.filter_by_location(location_id)

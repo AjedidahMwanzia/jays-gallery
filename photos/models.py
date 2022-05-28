@@ -62,9 +62,9 @@ class Photo(models.Model):
         return images
 
     @classmethod
-    def search_photo(cls, search_term):
-        photos = cls.objects.filter(name__icontains=search_term)
-        return photos
+    def search_by_category(cls,search_term):
+        searched_photos=cls.objects.filter(category__category__icontains=search_term)
+        return searched_photos
 
 class Location(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -83,3 +83,5 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
+
+  
