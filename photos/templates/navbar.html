@@ -15,10 +15,26 @@
         <a class="nav-link active"  aria-current="page" href="{% url 'gallery' %}" >Home</a>
       </li>
      <!-- Adding a search form  -->
+     <ul class="navbar-nav mr-auto">
+            
+           
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Location
+          </a>
+          
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% for  location in locations %}
+              <a class="dropdown-item" href="{% url 'get_location' location.id %}">{{location.name}}</a>
+              {%endfor%} 
+          </div>
+      </li>
+  </ul>
      <div class="col-sm-4 col-md-4 navbar-right">
 
       <form class="navbar-form" role="search" action="{% url 'search_results' %}">
-
+       
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search Category" name="Category">
           <div class="input-group-btn">

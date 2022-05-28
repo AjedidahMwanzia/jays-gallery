@@ -6,6 +6,11 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    def save_category(self):
+        self.save()
+    # delete the image database
+    def delete_category(self):
+        self.delete()
 
     def get_all_category(cls):
         categories = Category.objects.all()
@@ -53,7 +58,7 @@ class Photo(models.Model):
     # get images by location
     @classmethod
     def filter_by_location(cls, location_id):
-        images = Image.objects.filter(location__id=location_id)
+        images = Photo.objects.filter(location__id=location_id)
         return images
 
     @classmethod

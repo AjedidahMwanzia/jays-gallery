@@ -38,4 +38,4 @@ def search_results(request):
 def get_location(request,location_id):
     photos=Photo.filter_by_location(location_id)
 
-    return render (request,'photos/location.html',{'photos':photo})
+    return render (request,'photos/location.html',{'photos':photos})
