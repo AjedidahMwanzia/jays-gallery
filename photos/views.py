@@ -12,7 +12,7 @@ def gallery(request):
         photos = Photo.objects.filter(category__name__contains=category)
     
     categories = Category.objects.all()
-   
+    
 
     context = {'categories':categories,'photos':photos}
     return render(request,'photos/gallery.html',context)
@@ -23,12 +23,13 @@ def viewPhoto(request,pk):
 
 def search_results(request):
 
-    if 'Category' in request.GET and request.GET["Category"]:
-        search_term = request.GET.get("Category")
-        searched_categories = Category.search_by_name(search_term)
+    if 'name' in request.GET and request.GET["name"]:
+        search_term = request.GET.get("name")
+        searched_images = Photo.search_image(search_term)
+        print(searched_images)
         message = f"{search_term}"
 
-        return render(request, 'photos/search.html',{"message":message,"articles": searched_articles})
+        return render(request, 'photos/search.html',{"message":message,"images": searched_images})
 
     else:
         message = "You haven't searched for any term"
