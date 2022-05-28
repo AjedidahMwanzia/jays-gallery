@@ -16,7 +16,7 @@ class Photo(models.Model):
     category=models.ForeignKey(Category, on_delete=models.SET_NULL,null=True,blank=True)
     description=models.TextField(null=True)
     image = models.ImageField(default='DEFAULT VALUE')
-    
+    location = models.ForeignKey('Location',null=True,on_delete=models.CASCADE)
     
     def __str__(self):
         return self.description
@@ -27,6 +27,13 @@ class Photo(models.Model):
     def delete_image(self):
         self.delete()
     # get all images
+    def update_image(self, name, description, location, category):
+        self.name = name
+        self.description = description
+        self.location = location
+        self.category = category
+        self.save()
+
     @classmethod
     def get_all_images(cls):
         images = Photo.objects.all()
@@ -43,12 +50,17 @@ class Photo(models.Model):
     def filter_by_category(cls, category_id):
         images = Photo.objects.filter(category_id=category_id)
         return images
+    # get images by location
+    @classmethod
+    def filter_by_location(cls, location_id):
+        images = Image.objects.filter(location__id=location_id)
+        return images
 
     @classmethod
     def search_photo(cls, search_term):
         photos = cls.objects.filter(name__icontains=search_term)
         return photos
-        
+
 class Location(models.Model):
     name = models.CharField(max_length=50, unique=True)
     # save location to database

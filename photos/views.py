@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
-from .models import Category,Photo
+from .models import Category,Photo,Location
 
 # Create your views here.
 def gallery(request):
@@ -12,9 +12,9 @@ def gallery(request):
         photos = Photo.objects.filter(category__name__contains=category)
     
     categories = Category.objects.all()
-    
+    locations=Location.objects.all
 
-    context = {'categories':categories,'photos':photos}
+    context = {'categories':categories,'photos':photos,'locations':locations}
     return render(request,'photos/gallery.html',context)
 
 def viewPhoto(request,pk):
@@ -38,4 +38,4 @@ def search_results(request):
 def get_location(request,location_id):
     photos=Photo.filter_by_location(location_id)
 
-    return render (request,'photos/location.html',{'images':images})
+    return render (request,'photos/location.html',{'photos':photo})
