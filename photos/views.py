@@ -25,12 +25,17 @@ def search_results(request):
 
     if 'name' in request.GET and request.GET["name"]:
         search_term = request.GET.get("name")
-        searched_images = Photo.search_image(search_term)
-        print(searched_images)
+        searched_photos = Photo.search_photo(search_term)
+        print(searched_photos)
         message = f"{search_term}"
 
-        return render(request, 'photos/search.html',{"message":message,"images": searched_images})
+        return render(request, 'photos/search.html',{"message":message,"images": searched_photos})
 
     else:
         message = "You haven't searched for any term"
         return render(request, 'photos/search.html',{"message":message})
+
+def get_location(request,location_id):
+    photos=Photo.filter_by_location(location_id)
+
+    return render (request,'photos/location.html',{'images':images})
