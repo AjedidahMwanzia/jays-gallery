@@ -3,18 +3,20 @@
 {% load static %}
 
 {% block content%}
-
-<div class="m-5">
-    <div class="container">
-        <div class="row justify-content-center">
-           
-            <div style="height: 90vh;">
-               <img style="max-width: 100%; max-height:100%;" src="{{photo.image.url}}" alt="">
-               <p>{{photo.description}}</p>
+<div  style=" width: 80%; margin-left: 10vw;padding-bottom: 9vw;margin-bottom: 5vw;padding-top: 3vw; padding-left: 7vw;padding-right: 7vw;border-radius: 1vw;">
+    <div class="m-5" >
+        <div class="container" >
+            <div class="row justify-content-center">
+            
+                <div style="height: 70vh;">
+                <img style="max-width: 100%; max-height:100%;border-radius: 1vw;" src="{{photo.image.url}}" alt="">
+                <p style="padding-top:1vw ;">{{photo.description}}</p>
+                </div>
             </div>
+            
         </div>
+        
+
     </div>
-
-</div>
-
+  </div>
 {% endblock%}
