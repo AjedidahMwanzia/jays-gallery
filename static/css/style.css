@@ -15,51 +15,58 @@ body{
 #home{
     list-style: none;
 }
+.navbar-brand{
+    font-size: 1.3vw;
+    margin-top: 1vw;
+}
+.card-img-top {
+    height: 23vh;
+}
+.navbar-nav a{
+    color: black;
+   }
+.navbar-nav a{
+    color: black;
+    font-size: 1vw;
+   }
+   
+
 @media screen and (max-width:500px){
     .navbar-form{
        display: none;
     } 
+    .navbar-nav{
+       margin-top: -0.5vw;
+       margin-left: 1vw;
+    }
+    .navbar-nav a{
+      color: black;
+     }
+     
+    .navbar-brand{
+        font-size: 3vw; 
+        margin-top: 5.5vw;
+    }
+    .navbar-brand a{
+        font-size: 3.2vw;
+    }
     .navbar a{
-        font-size: 3vw;
+        font-size: 3.2vw;
     } 
     .row li a{
-        font-size: 2.3vw;
+        font-size: 3.2vw;
     }
     .card-header{
-        font-size: 2.3vw;
+        font-size: 3.2vw;
     }
     .card-body p{
-        font-size: 2.3vw;
+        font-size: 3.2vw;
     }
     .card-body a{
-        font-size: 2.3vw;
+        font-size: 3.2vw;
     }
     .card-img-top {
-        height: 30vw;
-
-    }
-}
-@media screen and (min-width:500px){
-    .navbar-form{
-       display: none;
-    } 
-    .navbar a{
-        font-size: 3vw;
-    } 
-    .row li a{
-        font-size: 2.3vw;
-    }
-    .card-header{
-        font-size: 2.3vw;
-    }
-    .card-body p{
-        font-size: 2.3vw;
-    }
-    .card-body a{
-        font-size: 2.3vw;
-    }
-    .card-img-top {
-        height: 30vw;
+        height: 60vw;
 
     }
 }
