@@ -15,7 +15,7 @@
     <title>Jays Gallery</title>
 </head>
 {%block content %}
-<div class="m-5">
+
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -45,10 +45,10 @@
                 
                     <div class="col-md-4" >
                       <div class="card"  style="margin-bottom: 1vw;">
-                        <img style="height: 20vh;" src="{{ photo.image.url}}" class="card-img-top" alt="...">
+                        <img style="height: 23vh;" src="{{ photo.image.url}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <small>Category:{{photo.category.name}}</small>
-                          <p> Description </p>
+                         <p> Category:&nbsp;{{photo.category.name}}</small> <br></p>
+                          <p> <small>Location:{{photo.location}}</small> </p>
                           <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">view</a>
                         </div>
                       </div>

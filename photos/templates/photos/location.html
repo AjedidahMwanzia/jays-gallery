@@ -8,7 +8,7 @@
             <img style="height: 20vh;" src="{{ photo.image.url}}" class="card-img-top" alt="...">
             <div class="card-body">
               <small>Category:{{photo.category.name}}</small>
-              <p> Description </p>
+             <p> Location:{{photo.location}} </p>
               <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">view</a>
             </div>
           </div>

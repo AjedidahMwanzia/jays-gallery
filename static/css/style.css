@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'Poppins', sans-serif;
     font-size: 1.2vw;
@@ -8,4 +14,52 @@ body{
 }
 #home{
     list-style: none;
+}
+@media screen and (max-width:500px){
+    .navbar-form{
+       display: none;
+    } 
+    .navbar a{
+        font-size: 3vw;
+    } 
+    .row li a{
+        font-size: 2.3vw;
+    }
+    .card-header{
+        font-size: 2.3vw;
+    }
+    .card-body p{
+        font-size: 2.3vw;
+    }
+    .card-body a{
+        font-size: 2.3vw;
+    }
+    .card-img-top {
+        height: 30vw;
+
+    }
+}
+@media screen and (min-width:500px){
+    .navbar-form{
+       display: none;
+    } 
+    .navbar a{
+        font-size: 3vw;
+    } 
+    .row li a{
+        font-size: 2.3vw;
+    }
+    .card-header{
+        font-size: 2.3vw;
+    }
+    .card-body p{
+        font-size: 2.3vw;
+    }
+    .card-body a{
+        font-size: 2.3vw;
+    }
+    .card-img-top {
+        height: 30vw;
+
+    }
 }
