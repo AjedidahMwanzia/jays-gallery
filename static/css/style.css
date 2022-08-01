@@ -45,7 +45,7 @@ body{
      
     .navbar-brand{
         font-size: 3vw; 
-        margin-top: 5.5vw;
+        margin-top: 5.7vw;
     }
     .navbar-brand a{
         font-size: 3.2vw;
@@ -70,3 +70,29 @@ body{
 
     }
 }
+.images{
+    display: flex;
+    background-color:  #fafafa;
+    width: 110%;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    margin-top: 2vw;
+    padding: 4vw;
+    margin-left: -3vw;
+
+}
+.images img {
+    width: 30vw;
+    margin-right: 4vw;
+    height: 30vw;
+}
+.images p {
+    width: 90%;
+    margin-top: 2VW;
+    
+}
+.vl {
+    border-left: 0.2vw solid grey;
+    height: 50vw;
+    position: absolute;
+    
+  }
