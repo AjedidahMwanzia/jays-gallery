@@ -8,6 +8,9 @@ requests = "*"
 django = "*"
 django-bootstrap3 = "*"
 pillow = "*"
+django-heroku = "*"
+whitenoise = "*"
+python-decouple = "*"
 
 [dev-packages]
 
