@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 from pathlib import Path
 import os
@@ -22,7 +25,11 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+cloudinary.config( 
+  cloud_name = "jeddy", 
+  api_key = "136262568691725", 
+  api_secret = "D8mX4Rvxz6VyGLhZDIprEG26Q60" 
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -47,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photos',
     'bootstrap3',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [

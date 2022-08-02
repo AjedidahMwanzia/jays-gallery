@@ -11,6 +11,7 @@ pillow = "*"
 django-heroku = "*"
 whitenoise = "*"
 python-decouple = "*"
+cloudinary = "*"
 
 [dev-packages]
 

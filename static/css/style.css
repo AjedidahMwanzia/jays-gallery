@@ -32,21 +32,23 @@ body{
    .images{
     display: flex;
     background-color:  #fafafa;
-    width: 110%;
+    width: 115%;
     box-shadow: 3px 3px 5px 6px #ccc;
     margin-top: 2vw;
     padding: 4vw;
-    margin-left: -3vw;
+    margin-left: -6vw;
+    border-radius: 0.2vw;
 
 }
 .images img {
     width: 30vw;
     margin-right: 4vw;
     height: 30vw;
+    border-radius: 1vw;
 }
 .images p {
     width: 90%;
-    margin-top: 2VW;
+    margin-top: 0.8vw;
     
 }
 .vl {
@@ -94,6 +96,9 @@ body{
     .card-img-top {
         height: 60vw;
 
+    }
+    #video a{
+        font-size: 3.2vw;
     }
 }
 
