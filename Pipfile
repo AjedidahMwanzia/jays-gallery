@@ -12,6 +12,7 @@ django-heroku = "*"
 whitenoise = "*"
 python-decouple = "*"
 cloudinary = "*"
+gunicorn = "*"
 
 [dev-packages]
 
