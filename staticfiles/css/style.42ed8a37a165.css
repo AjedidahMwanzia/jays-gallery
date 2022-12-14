@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2vw;
+}
+.btn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1vw;
+}
+#home{
+    list-style: none;
+}
+.navbar-brand{
+    font-size: 1.3vw;
+    margin-top: 1vw;
+}
+.card-img-top {
+    height: 23vh;
+}
+.navbar-nav a{
+    color: black;
+   }
+.navbar-nav a{
+    color: black;
+    font-size: 1vw;
+   }
+   .images{
+    display: flex;
+    background-color:  #fafafa;
+    width: 115%;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    margin-top: 2vw;
+    padding: 4vw;
+    margin-left: -6vw;
+    border-radius: 0.2vw;
+
+}
+.images img {
+    width: 30vw;
+    margin-right: 4vw;
+    height: 30vw;
+    border-radius: 1vw;
+}
+.images p {
+    width: 90%;
+    margin-top: 0.8vw;
+    
+}
+.vl {
+    border-left: 0.2vw solid grey;
+    height: 50vw;
+    position: absolute;
+    
+  }
+  
+
+@media screen and (max-width:500px){
+    .navbar-form{
+       display: none;
+    } 
+    .navbar-nav{
+       margin-top: -0.5vw;
+       margin-left: 1vw;
+    }
+    .navbar-nav a{
+      color: black;
+     }
+     
+    .navbar-brand{
+        font-size: 3vw; 
+        margin-top: 5.7vw;
+    }
+    .navbar-brand a{
+        font-size: 3.2vw;
+    }
+    .navbar a{
+        font-size: 3.2vw;
+    } 
+    .row li a{
+        font-size: 3.2vw;
+    }
+    .card-header{
+        font-size: 3.2vw;
+    }
+    .card-body p{
+        font-size: 3.2vw;
+    }
+    .card-body a{
+        font-size: 3.2vw;
+    }
+    .card-img-top {
+        height: 60vw;
+
+    }
+    #video a{
+        font-size: 3.2vw;
+    }
+}
+
+@media screen and (max-width:500px){
+    .images{
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        background-color: white;
+        width: 115%;
+        margin-top: 2vw;
+        padding: 5vw;
+        margin-left: -3vw;
+    
+    }
+    .images img {
+        width: 90vw;
+        margin-left: 2vw;
+        height: 60vw;
+    }
+    .images p {
+        width: 90%;
+        margin-top: 2VW;
+        font-size: 3vw;
+        
+    }
+    label{
+        font-size: 3vw;
+        margin-bottom: 1vw;
+    }
+    .form-control input{
+        width: 20%;
+        margin-left: -2vw;
+    }
+  }
