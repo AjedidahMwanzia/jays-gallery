@@ -95,7 +95,12 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 DATABASES = {
         'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'gallery',
+           'NAME': 'railway',
+           'USER':'postgres',
+           'PASSWORD':'U3QsvrMyuAHZ2QWzCJMd',
+           'HOST':'containers-us-west-138.railway.app',
+           'PORT':'6152',
+
                
        }
        
