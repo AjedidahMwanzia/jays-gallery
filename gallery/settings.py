@@ -92,19 +92,24 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-        'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'railway',
-           'USER':'postgres',
-           'PASSWORD':'GsV9T7E7G8kk9PoesCQz',
-           'HOST':'containers-us-west-198.railway.app',
-           'PORT':'7987',
+# DATABASES = {
+#         'default': {
+#            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#            'NAME': 'railway',
+#            'USER':'postgres',
+#            'PASSWORD':'GsV9T7E7G8kk9PoesCQz',
+#            'HOST':'containers-us-west-198.railway.app',
+#            'PORT':'7987',
 
                
-       }
+#        }
        
-   }
+#    }
+
+DATABASES = {
+       'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    
+}
 
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
